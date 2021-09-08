@@ -1,6 +1,5 @@
 //
 //  gameBoard.cpp
-//  Abernathy_2876941_Lab8
 //
 //  Created by Adam Abernathy on sept 8 2021
 //  Copyright © 2021 Adam Abernathy. All rights reserved.
@@ -8,6 +7,7 @@
 // game board implemntation
 //
 
+#include "gameBoard.hpp"
 // #include "myDefines.h"
 
 using namespace std;
@@ -19,5 +19,11 @@ using namespace std;
 *******************************************************************************/
 //default
 gameBoard::gameBoard(){
+
+/*******************************************************************************
+**
+**MARK: Methods
+**
+*******************************************************************************/
 
 }

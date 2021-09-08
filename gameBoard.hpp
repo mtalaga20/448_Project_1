@@ -1,6 +1,5 @@
 //
-//  Blob.hpp
-//  Abernathy_2876941_Lab8
+//  gameBoard.hpp
 //
 //  Created by Adam Abernathy on sept 8 2021
 //  Copyright © 2021 Adam Abernathy. All rights reserved.
