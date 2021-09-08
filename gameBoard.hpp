@@ -19,7 +19,7 @@
 
 using namespace std;
 
-class gameBoard {
+class GameBoard {
 
 private:
     int num_rows;//number of board rows
@@ -29,35 +29,35 @@ private:
 public:
     /*MARK: Constructors*/
     //default
-    gameBoard();
+    GameBoard();
 
     /** with param
-    @pre
-    @post
+    @pre none
+    @post object with speciviced params
     @param row - number of rows
     @param col - number of columns
     @param ships - number of ships in game */
-    gameBoard(int row, int col, int ships);
+    GameBoard(int row, int col, int ships);
 
     //destructor
-    ~gameBoard();
+    ~GameBoard();
 
     /*MARK: Setters*/
     /** set number of rows
-    @pre
-    @post
-    @param rows - # of rows for map */
+    @pre none
+    @post none
+    @param row - # of rows for map */
     void set_rows(int row);
 
     /** set number of columns
-    @pre
-    @post
+    @pre none
+    @post none
     @param col - # of columns */
     void set_col(int col);
 
     /** set number of ships
-    @pre
-    @post
+    @pre none
+    @post none
     @param ship - # of columns */
     void set_ships(int ship);
 
@@ -80,18 +80,18 @@ public:
 
     /*MARK: Methods*/
     /** prints the game boar
-    @pre
-    @post  */
+    @pre class object with rows and columns
+    @post board printed on screen */
     void printBoard();
 
     /** prints the instructions
-    @pre
-    @post */
+    @pre none
+    @post none */
     void printInstructions();
 
     /** prints the legend
-    @pre
-    @post */
+    @pre none
+    @post none*/
     void printLegend();
 };
 

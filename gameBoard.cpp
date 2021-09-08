@@ -18,7 +18,16 @@ using namespace std;
 **
 *******************************************************************************/
 //default
-gameBoard::gameBoard(){
+GameBoard::GameBoard(){
+
+}
+
+//with param
+GameBoard::GameBoard(int row, int col, int ships) {
+    num_rows = row;
+    num_col = col;
+    num_ships = ships;
+}
 
 /*******************************************************************************
 **
@@ -26,4 +35,38 @@ gameBoard::gameBoard(){
 **
 *******************************************************************************/
 
+void GameBoard::set_rows(int row) {
+    num_rows = row;
+}
+
+void GameBoard::set_col(int col) {
+    num_col = col;
+}
+
+void GameBoard::set_ships(int ship) {
+    num_ships = ship;
+}
+
+int GameBoard::get_rows() const{
+    return num_rows;
+}
+
+int GameBoard::get_col() const{
+    return num_col;
+}
+
+int GameBoard::get_ships() const{
+    return num_ships;
+}
+
+void GameBoard::printBoard() {
+    ;
+}
+
+void GameBoard::printInstructions() {
+    ;
+}
+
+void GameBoard::printLegend() {
+    
 }
