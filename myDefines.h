@@ -1,9 +1,8 @@
 //
 //  myDefines.h
-//  Abernathy_2876941_Lab_11
 //
-//  Created by Adam Abernathy on 11/16/2019.
-//  Copyright © 2019 Adam Abernathy. All rights reserved.
+//  Created by Adam Abernathy on sept 8 2021
+//  Copyright © 2021 Adam Abernathy. All rights reserved.
 //
 // file that include any #define and other constants
 // contains header linking
