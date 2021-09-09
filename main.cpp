@@ -5,10 +5,10 @@
 //  Copyright © 2021 Adam Abernathy. All rights reserved.
 //
 
-// #include "myDefines.h"
+#include "myDefines.h"
 
 int main(int argc, const char * argv[]) {
-    //foer testing
+    //for testing
     Executive exec;
 
     exec.runApp();
