@@ -1,5 +1,5 @@
 battleship: main.o Executive.o gameBoard.o
-	g++ -g -std=c++11 -Wall main.o Executive.o -o battleship
+	g++ -g -std=c++11 -Wall main.o Executive.o gameBoard.o -o battleship
 
 main.o: main.cpp Executive.hpp myDefines.h
 	g++ -g -std=c++11 -Wall -c main.cpp
