@@ -11,20 +11,18 @@
 #ifndef GAMEBOARD_HPP
 #define GAMEBOARD_HPP
 
-#include <string>
-#include <iostream>
-#include <stdio.h>
-#include <stdexcept>
-// #include "myDefines.h"
+#include "myDefines.h"
 
 using namespace std;
 
 class GameBoard {
 
 private:
+    bool winner; //tracks if there is a winning condition
     int num_rows;//number of board rows
     int num_col; //number of board columns
     int num_ships; //number of ships used in game
+    char board_arr[];
 
 public:
     /*MARK: Constructors*/
@@ -40,7 +38,8 @@ public:
     GameBoard(int row, int col, int ships);
 
     //destructor
-    ~GameBoard();
+    //TODO: getting error when line is uncomment below
+//    ~GameBoard();
 
     /*MARK: Setters*/
     /** set number of rows

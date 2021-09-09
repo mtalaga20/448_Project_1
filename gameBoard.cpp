@@ -7,8 +7,7 @@
 // game board implemntation
 //
 
-#include "gameBoard.hpp"
-// #include "myDefines.h"
+#include "myDefines.h"
 
 using namespace std;
 
@@ -60,13 +59,21 @@ int GameBoard::get_ships() const{
 }
 
 void GameBoard::printBoard() {
-    ;
+    cout << "THE BOARD" << endl;
+    printInstructions();
+    printLegend();
+    //print current array
+    cout << "THEND BOARD" << endl;
+    
 }
 
 void GameBoard::printInstructions() {
-    ;
+    cout << "inst line 1" << endl;
+    cout << "inst line 2" << endl;
+    cout << "inst line 3" << endl;
+    cout << "inst line 4" << endl;
 }
 
 void GameBoard::printLegend() {
-    
+    cout << "X => HIT  O => MISS  ? => UNKNOWN" << endl;
 }
