@@ -18,10 +18,11 @@ using namespace std;
 class Executive {
 
 private:
-    //players turn tracker
-    enum whos_turn{user, cpu};
+    //used to throw state machine loop
+    bool winner;
+    enum game_winner {user, cpu, playing};
     //state machine
-    enum game_state{set_ships, user_turn, cpu_turn, end_game};
+    enum game_state {begin, set_ships, user_turn, cpu_turn, end_game };
 
 public:
 
@@ -36,11 +37,20 @@ public:
     /*NONE*/
 
     /*MARK: Methods*/
-    //main method that controls the app
+    /** main method that controls the app
+     @pre
+     @post */
     void runApp();
 
     //prints a message. future useability
     void exitApp();
+    
+    /** checks for winning conditions
+     @pre a gameBoard object
+     @post true if winning conditons are met */
+    bool check_winner ();
+    
+    //TODO: ADD ANY NEEDED FUNCTIONS
 };
 
 #endif /* EXECUTIVE_HPP */

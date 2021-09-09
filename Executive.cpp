@@ -8,7 +8,6 @@
 //
 
 #include "myDefines.h"
-#include "GameBoard.hpp"
 
 //macros
 using namespace std;
@@ -20,6 +19,8 @@ using namespace std;
 *******************************************************************************/
 //default
 Executive::Executive() {
+
+    winner = false;
 
 }
 
@@ -50,10 +51,79 @@ void Executive::runApp() {
     GameBoard gameBoard;
     //new user
     //new comp player
-    
-    //troubleshooting
-    gameBoard.printBoard();
-    
+    //new state tracker
+    game_state state = begin;
+    game_winner who_won = playing;
+
+    //State Machine
+    while (!winner) {
+        switch (state) {
+            case begin:
+                //start the game
+                // print banner
+                cout << "Welcome to BattleShip" << endl;
+                cout << "start game" << endl;
+                state = set_ships;
+                break;
+            case set_ships:
+                //user set ships
+
+                //comp set ships
+
+                //print board
+                gameBoard.printBoard();
+                //advance state machine
+                state = user_turn;
+                break;
+
+            case user_turn:
+                //user interaction
+
+                //advance state
+                if (check_winner()){
+                    state = end_game;
+                    who_won = user;
+                } else {
+                    state = cpu_turn;
+                }
+                break;
+
+            case cpu_turn:
+                //cpu random pick
+                //could add some look at previous turn for hit here or in a cpu class
+
+                //advance state
+                if (check_winner()){
+                    state = end_game;
+                    who_won = cpu;
+                } else {
+                    state = user_turn;
+                }
+                break;
+
+            case end_game:
+                winner = true;
+                //troubleshooting
+                cout << "game won" << endl;
+                break;
+                //should never reach default
+            default:
+                break;
+        }
+    }
+
+
     //end game
-    
+
+}
+
+void Executive::exitApp() {
+    cout << "you just called exitApp() function" << endl;
+    //future use
+}
+
+bool Executive::check_winner() {
+    //TODO: proto winner check
+
+    return true;
 }
