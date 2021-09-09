@@ -11,15 +11,17 @@
 #ifndef EXECUTIVE_HPP
 #define EXECUTIVE_HPP
 
-// #include "myDefines.h"
-#include "GameBoard.hpp"
+#include "myDefines.h"
 
 using namespace std;
 
 class Executive {
 
 private:
-
+    //players turn tracker
+    enum whos_turn{user, cpu};
+    //state machine
+    enum game_state{set_ships, user_turn, cpu_turn, end_game};
 
 public:
 

@@ -7,7 +7,8 @@
 // Executive implementation
 //
 
-// #include "myDefines.h"
+#include "myDefines.h"
+#include "GameBoard.hpp"
 
 //macros
 using namespace std;
@@ -43,3 +44,16 @@ Executive::Executive() {
 **MARK: Methods
 **
 *******************************************************************************/
+
+void Executive::runApp() {
+    //new game board
+    GameBoard gameBoard;
+    //new user
+    //new comp player
+    
+    //troubleshooting
+    gameBoard.printBoard();
+    
+    //end game
+    
+}
