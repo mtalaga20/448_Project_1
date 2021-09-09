@@ -9,7 +9,11 @@
 
 #include "myDefines.h"
 
+//macros
 using namespace std;
+#define ROWS 9
+#define COLUMNS 6
+#define TEST_SHIPS 4
 
 /*******************************************************************************
 **
@@ -17,8 +21,10 @@ using namespace std;
 **
 *******************************************************************************/
 //default
-GameBoard::GameBoard(){
-
+GameBoard::GameBoard() {
+    num_rows = ROWS;
+    num_col = COLUMNS;
+    num_ships = TEST_SHIPS;
 }
 
 //with param
@@ -75,5 +81,10 @@ void GameBoard::printInstructions() {
 }
 
 void GameBoard::printLegend() {
+    cout << "************* LEGEND ************" << endl;
     cout << "X => HIT  O => MISS  ? => UNKNOWN" << endl;
+}
+
+void GameBoard::printSquare() {
+    //TODO: needs proto
 }

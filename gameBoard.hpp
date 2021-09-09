@@ -22,6 +22,8 @@ private:
     int num_rows;//number of board rows
     int num_col; //number of board columns
     int num_ships; //number of ships used in game
+   //will hold the state of the current board
+    //TODO: need to make arry max size or dynamic
     char board_arr[];
 
 public:
@@ -36,10 +38,6 @@ public:
     @param col - number of columns
     @param ships - number of ships in game */
     GameBoard(int row, int col, int ships);
-
-    //destructor
-    //TODO: getting error when line is uncomment below
-//    ~GameBoard();
 
     /*MARK: Setters*/
     /** set number of rows
@@ -78,6 +76,7 @@ public:
 
 
     /*MARK: Methods*/
+    
     /** prints the game boar
     @pre class object with rows and columns
     @post board printed on screen */
@@ -92,6 +91,12 @@ public:
     @pre none
     @post none*/
     void printLegend();
+
+    //TODO: may nix
+    /** prints the position and current value with the border
+     @pre a board array
+     @post none */
+    void printSquare();
 };
 
 #endif /* GAMEBOARD_HPP */
