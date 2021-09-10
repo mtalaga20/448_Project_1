@@ -31,11 +31,7 @@ GameBoard::GameBoard() {
     for (int r = 0; r<ROWS; r++) {
         board_arr[r] = new char[COLUMNS];
         for (int c = 0; c<COLUMNS; c++){
-            if (r == 0) {
-                board_arr[r][c] = col_head[c];
-            } else {
-                board_arr[r][c] = col_head[11];
-            }
+            board_arr[r][c] = col_head[11];
         }
     }
     
@@ -53,11 +49,7 @@ GameBoard::GameBoard(int p_rows, int p_cols, int p_ships) {
     for (int r = 0; r<p_rows; r++) {
         board_arr[r] = new char[p_cols];
         for (int c = 0; c<p_cols; c++){
-            if (r == 0) {
-                board_arr[r][c] = col_head[c];
-            } else {
-                board_arr[r][c] = col_head[11];
-            }
+            board_arr[r][c] = col_head[11];
         }
     }
 }
@@ -109,7 +101,7 @@ void GameBoard::printBoard() {
     printInstructions();
     cout << endl;
     printLegend();
-    printHeader(board_arr);
+    printHeader();
     //print current array
     cout << endl << "THEND BOARD" << endl;
     
@@ -134,19 +126,21 @@ void GameBoard::printSquare() {
 
 
 void GameBoard::print_play(char **arr) {
-    
+    for (int r = 0; r<num_rows; r++) {
+        
+    }
 }
 
-void GameBoard::printHeader(char **arr) {
+void GameBoard::printHeader() {
     for (int c = 0; c<num_col; c++) {
         if (c == num_col) {
-            cout << arr[0][c];
+            cout << col_head[c];
             goto END;
         }
         if (c == 0){
-            cout << " _ | " << arr[0][c];
+            cout << " _ | " << col_head[c];
         } else {
-            cout << " | " << arr[0][c];
+            cout << " | " << col_head[c];
         }
     }
     END:

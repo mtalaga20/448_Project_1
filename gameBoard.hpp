@@ -113,7 +113,7 @@ public:
     /** prints the row header
      @pre none
      @post none */
-    void printHeader(char **arr);
+    void printHeader();
 };
 
 #endif /* GAMEBOARD_HPP */
