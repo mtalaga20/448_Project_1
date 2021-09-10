@@ -114,6 +114,11 @@ public:
      @pre none
      @post none */
     void printHeader();
+    
+    /** prints dotted line that matched game board lenght
+     @pre none
+     @post none */
+    void printDotted();
 };
 
 #endif /* GAMEBOARD_HPP */

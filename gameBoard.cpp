@@ -102,9 +102,10 @@ void GameBoard::printBoard() {
     cout << endl;
     printLegend();
     printHeader();
+    printDotted();
     print_play(board_arr);
-    //print current array
-    cout << endl << "THEND BOARD" << endl;
+    printHeader();
+//    cout << endl << "THEND BOARD" << endl;
     
 }
 
@@ -141,6 +142,7 @@ void GameBoard::print_play(char **arr) {
         }
         END:
         cout << " | " << r + 1 << endl;
+        printDotted();
     }
 }
 
@@ -151,14 +153,28 @@ void GameBoard::printHeader() {
             goto END;
         }
         if (c == 0){
-            cout << " _ | " << col_head[c];
+            cout << "   | " << col_head[c];
         } else {
             cout << " | " << col_head[c];
         }
     }
     END:
     //satisfies compiler
-    cout << " | _ " << endl;
+    cout << " |   " << endl;
 }
     
-    
+void GameBoard::printDotted() {
+    for (int i = 0; i<num_col + 1; i++){
+        if (i == num_col ) {
+            cout << "------";
+            goto END;
+        }
+        if (i == 0) {
+            cout << " ---";
+        } else {
+            cout << "----";
+        }
+    }
+    END:
+    cout << endl;
+}
