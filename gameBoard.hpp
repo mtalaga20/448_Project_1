@@ -23,12 +23,9 @@ private:
     int num_rows;//number of board rows
     int num_col; //number of board columns
     int num_ships; //number of ships used in game
-   //will hold the state of the current board
-    //TODO: need to make arry max size or dynamic
-    //made max for testing
-    //row then columns
-    char board_arr[9][10];
+    char **board_arr; //will hold the state of the current board
     
+    char col_head[12] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', '?'};
 
 public:
     /*MARK: Constructors*/
@@ -40,10 +37,10 @@ public:
     /** with param
     @pre none
     @post object with speciviced params
-    @param row - number of rows
-    @param col - number of columns
-    @param ships - number of ships in game */
-    GameBoard(int row, int col, int ships);
+    @param p_rows number of rows
+    @param p_cols number of columns
+    @param p_ships number of ships in game */
+    GameBoard(int p_rows, int p_cols, int p_ships);
 
     /*MARK: Setters*/
     /** set number of rows
@@ -107,15 +104,16 @@ public:
      @post none */
     void printSquare();
     
-    /** fills an array with all ? which will be the starting board
+    /** prints play area of the board
      @pre none
-     @post none */
-    void fill_empty(char *arr[]);
+     @post none
+     @param arr 2D array of the game*/
+    void print_play(char **arr);
     
     /** prints the row header
      @pre none
      @post none */
-    void printHeader(char *arr[]);
+    void printHeader(char **arr);
 };
 
 #endif /* GAMEBOARD_HPP */

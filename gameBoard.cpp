@@ -12,7 +12,7 @@
 //macros
 using namespace std;
 #define ROWS 9
-#define COLUMNS 6
+#define COLUMNS 10
 #define TEST_SHIPS 4
 
 /*******************************************************************************
@@ -25,13 +25,41 @@ GameBoard::GameBoard() {
     num_rows = ROWS;
     num_col = COLUMNS;
     num_ships = TEST_SHIPS;
+    
+    board_arr = new char*[num_rows];
+    
+    for (int r = 0; r<ROWS; r++) {
+        board_arr[r] = new char[COLUMNS];
+        for (int c = 0; c<COLUMNS; c++){
+            if (r == 0) {
+                board_arr[r][c] = col_head[c];
+            } else {
+                board_arr[r][c] = col_head[11];
+            }
+        }
+    }
+    
+    
 }
 
 //with param
-GameBoard::GameBoard(int row, int col, int ships) {
-    num_rows = row;
-    num_col = col;
-    num_ships = ships;
+GameBoard::GameBoard(int p_rows, int p_cols, int p_ships) {
+    num_rows = p_rows;
+    num_col = p_cols;
+    num_ships = p_ships;
+    
+    board_arr = new char*[p_rows];
+    
+    for (int r = 0; r<p_rows; r++) {
+        board_arr[r] = new char[p_cols];
+        for (int c = 0; c<p_cols; c++){
+            if (r == 0) {
+                board_arr[r][c] = col_head[c];
+            } else {
+                board_arr[r][c] = col_head[11];
+            }
+        }
+    }
 }
 
 /*******************************************************************************
@@ -77,13 +105,13 @@ int GameBoard::get_ships() const{
 *******************************************************************************/
 
 void GameBoard::printBoard() {
-    cout << "THE BOARD" << endl;
+//    cout << "THE BOARD" << endl;
     printInstructions();
     cout << endl;
     printLegend();
-//    cout << "_| " << endl;
+    printHeader(board_arr);
     //print current array
-    cout << "THEND BOARD" << endl;
+    cout << endl << "THEND BOARD" << endl;
     
 }
 
@@ -104,20 +132,26 @@ void GameBoard::printSquare() {
     //TODO: needs proto
 }
 
-void GameBoard::fill_empty(char *arr[]) {
-    for (int r = 0; r<num_rows; r++) {
-        for (int c = 0; c<num_col; c++) {
-            arr[r][c] = '?';
-        }
-    }
+
+void GameBoard::print_play(char **arr) {
+    
 }
 
-void GameBoard::printHeader(char *arr[]) {
-    for (int r = 0; r<num_rows; r++) {
-        if (r == num_rows - 1) {
-            cout << arr[r][0] << " | _ " << endl;
+void GameBoard::printHeader(char **arr) {
+    for (int c = 0; c<num_col; c++) {
+        if (c == num_col) {
+            cout << arr[0][c];
+            goto END;
+        }
+        if (c == 0){
+            cout << " _ | " << arr[0][c];
         } else {
-            cout << " _ | " << arr[r][0] << endl;
+            cout << " | " << arr[0][c];
         }
     }
+    END:
+    //satisfies compiler
+    cout << " | _ " << endl;
 }
+    
+    
