@@ -31,7 +31,7 @@ GameBoard::GameBoard() {
     for (int r = 0; r<ROWS; r++) {
         board_arr[r] = new char[COLUMNS];
         for (int c = 0; c<COLUMNS; c++){
-            board_arr[r][c] = col_head[11];
+            board_arr[r][c] = col_head[10];
         }
     }
     
@@ -102,6 +102,7 @@ void GameBoard::printBoard() {
     cout << endl;
     printLegend();
     printHeader();
+    print_play(board_arr);
     //print current array
     cout << endl << "THEND BOARD" << endl;
     
@@ -127,7 +128,19 @@ void GameBoard::printSquare() {
 
 void GameBoard::print_play(char **arr) {
     for (int r = 0; r<num_rows; r++) {
-        
+        for (int c = 0; c<num_col; c++){
+            if (c == num_col) {
+                cout << arr[r][c];
+                goto END;
+            }
+            if (c == 0) {
+                cout << " " << r + 1 << " | " << arr[r][c];
+            } else {
+                cout << " | " << arr[r][c];
+            }
+        }
+        END:
+        cout << " | " << r + 1 << endl;
     }
 }
 
