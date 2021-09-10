@@ -36,7 +36,7 @@ GameBoard::GameBoard(int row, int col, int ships) {
 
 /*******************************************************************************
 **
-**MARK: Methods
+**MARK: Setter Methods
 **
 *******************************************************************************/
 
@@ -52,6 +52,12 @@ void GameBoard::set_ships(int ship) {
     num_ships = ship;
 }
 
+/*******************************************************************************
+**
+**MARK: Getter Methods
+**
+*******************************************************************************/
+
 int GameBoard::get_rows() const{
     return num_rows;
 }
@@ -63,6 +69,12 @@ int GameBoard::get_col() const{
 int GameBoard::get_ships() const{
     return num_ships;
 }
+
+/*******************************************************************************
+**
+**MARK: Methods
+**
+*******************************************************************************/
 
 void GameBoard::printBoard() {
     cout << "THE BOARD" << endl;
@@ -87,4 +99,12 @@ void GameBoard::printLegend() {
 
 void GameBoard::printSquare() {
     //TODO: needs proto
+}
+
+void GameBoard::fill_empty(char *arr[]) {
+    for (int r = 0; r<num_rows; r++) {
+        for (int c = 0; c<num_col; c++) {
+            arr[r][c] = '?';
+        }
+    }
 }
