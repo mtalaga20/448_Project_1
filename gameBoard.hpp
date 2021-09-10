@@ -28,6 +28,7 @@ private:
     //made max for testing
     //row then columns
     char board_arr[9][10];
+    
 
 public:
     /*MARK: Constructors*/
@@ -110,6 +111,11 @@ public:
      @pre none
      @post none */
     void fill_empty(char *arr[]);
+    
+    /** prints the row header
+     @pre none
+     @post none */
+    void printHeader(char *arr[]);
 };
 
 #endif /* GAMEBOARD_HPP */

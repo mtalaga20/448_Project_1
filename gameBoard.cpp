@@ -79,7 +79,9 @@ int GameBoard::get_ships() const{
 void GameBoard::printBoard() {
     cout << "THE BOARD" << endl;
     printInstructions();
+    cout << endl;
     printLegend();
+//    cout << "_| " << endl;
     //print current array
     cout << "THEND BOARD" << endl;
     
@@ -95,6 +97,7 @@ void GameBoard::printInstructions() {
 void GameBoard::printLegend() {
     cout << "************* LEGEND ************" << endl;
     cout << "X => HIT  O => MISS  ? => UNKNOWN" << endl;
+    cout << "*********************************" << endl;
 }
 
 void GameBoard::printSquare() {
@@ -105,6 +108,16 @@ void GameBoard::fill_empty(char *arr[]) {
     for (int r = 0; r<num_rows; r++) {
         for (int c = 0; c<num_col; c++) {
             arr[r][c] = '?';
+        }
+    }
+}
+
+void GameBoard::printHeader(char *arr[]) {
+    for (int r = 0; r<num_rows; r++) {
+        if (r == num_rows - 1) {
+            cout << arr[r][0] << " | _ " << endl;
+        } else {
+            cout << " _ | " << arr[r][0] << endl;
         }
     }
 }
